@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
+    "@auth0/auth0-react": "^1.5.0",
     "graphql": "^15.5.0",
     "next": "10.2.0",
     "react": "17.0.2",

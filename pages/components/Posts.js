@@ -40,7 +40,7 @@ export default () => {
       {
         data.Tweets.map((tweet, index) => (
           <Post key={index}>
-            <p>{tweet.User.name}</p>
+            <p>{tweet.User?.name}</p>
             <p>{tweet.content}</p>
           </Post>
         ))

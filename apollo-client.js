@@ -6,10 +6,12 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
+  console.log('hora que esse aqui roda')
   let customHeader = {};
 
   if ( typeof localStorage !== 'undefined'
   && localStorage.getItem('token') ) {
+    console.log(`Bearer ${localStorage.getItem('token')}`)
     customHeader.authorization = `Bearer ${localStorage.getItem('token')}`;
   } else {
     customHeader.role = 'anonymous';
