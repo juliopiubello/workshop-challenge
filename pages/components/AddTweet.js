@@ -81,10 +81,21 @@ const AddTweet = ({ client }) => {
   }
 
   return (
-    <div>
-      <textarea onChange={e => setTweet(e.target.value)} value={tweet} />
-      <button type="button" onClick={() => submitTweet()} >Tweet</button>
-      <button type="button" onClick={async () => { await logout(); client.clearStore()}}>Logout</button>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            What's happening? 
+          </div>
+          <div class="card-body p-0">
+            <textarea class="form-control border-0" onChange={e => setTweet(e.target.value)} value={tweet} />
+          </div>
+        </div>
+        <div class="mt-2 mb-2 float-end">
+          <button class="btn btn-primary me-2" type="button" onClick={() => submitTweet()} >Tweet</button>
+          <button class="btn btn-danger" type="button" onClick={async () => { await logout(); client.clearStore()}}>Logout</button>
+        </div>
+      </div>
     </div>
   )
 }
