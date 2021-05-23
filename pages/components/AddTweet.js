@@ -73,11 +73,8 @@ const AddTweet = ({ client }) => {
   if ( !isAuthenticated ) {
     return (
       <div>
-        Você precisa estar autenticado para poder postar tweet
-        <div>
-          <button type="button" onClick={() => loginWithRedirect()}>
-            Login
-          </button>
+        <div class="alert alert-warning">
+          Você precisa estar autenticado para poder postar tweets. <a href="#" onClick={() => loginWithRedirect()}>Efetuar login.</a>
         </div>
       </div>
     )
