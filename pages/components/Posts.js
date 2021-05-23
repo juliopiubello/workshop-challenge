@@ -21,6 +21,7 @@ const GET_TWEETS = gql`
       content
       User {
         name
+        email
       }
     }
   }
@@ -40,7 +41,7 @@ export default () => {
         data.Tweets.map((tweet, index) => (
           <Post key={index} className="p-2">
             <img src={tweet.User?.picture} alt="" />
-            <p className="fw-bold">{tweet.User?.name}</p>
+            <p className="fw-bold">{tweet.User?.name} <span className="fw-light fst-italic">{tweet.User?.email}</span></p>
             <p>{tweet.content}</p>
           </Post>
         ))
