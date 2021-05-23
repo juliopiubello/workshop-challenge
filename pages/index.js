@@ -10,13 +10,17 @@ export default function Home() {
   return (
       <div>
         <Navbar />
-        <div className={styles.container}>
+        <div className={styles.container, "container"}>
           <Head>
           <title>Create Next App</title>
           <link rel="icon" href="/favicon.ico" />
           </Head>
           <AddTweet />
-          <Posts />
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <Posts />
+            </div>
+          </div>
         </div>
       </div>
   )
