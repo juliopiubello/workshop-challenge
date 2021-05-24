@@ -5,8 +5,20 @@ import { gql, useQuery } from '@apollo/client';
 const WrapperPosts = styled.div`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  border: 1px solid #dedede;
+
+  width: min(601px, 100%); // shortest value between 601px and 100% of current window
+
+  @media (min-width: 500px) {
+      border-left: 1px solid var(--outline);
+      border-right: 1px solid var(--outline);
+  }
+`;
+
+const Posts = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0; /* this element will not shrink */
 `;
 
 const Post = styled.div`
@@ -37,6 +49,7 @@ export default () => {
 
   return (
     <WrapperPosts>
+      <Posts>
       {
         data.Tweets.map((tweet, index) => (
           <Post key={index}>
@@ -45,6 +58,7 @@ export default () => {
           </Post>
         ))
       }
+      </Posts>
     </WrapperPosts>
   )
 }
