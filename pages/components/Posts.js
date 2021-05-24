@@ -28,6 +28,28 @@ const Post = styled.div`
   flex-direction: column;
 `;
 
+const Header = styled.div`
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    white-space: nowrap;
+
+    > strong {
+        margin-right: 5px;
+    }
+
+    > span, time {
+        color: var(--gray);
+    }
+
+    > strong, span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+`;
+
 const GET_TWEETS = gql`
   query GET_TWEETS {
     Tweets {
@@ -53,8 +75,10 @@ export default () => {
       {
         data.Tweets.map((tweet, index) => (
           <Post key={index}>
-            <p>{tweet.User?.name}</p>
-            <p>{tweet.content}</p>
+            <Header>
+              <strong>{tweet.User?.name}</strong>
+              <span>{tweet.content}</span>
+            </Header>
           </Post>
         ))
       }
