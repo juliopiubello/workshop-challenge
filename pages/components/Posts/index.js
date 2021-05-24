@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { gql, useQuery } from "@apollo/client";
+import Post from '../Post';
 
 import {
     WrapperPosts,
     Posts,
-    Post,
+    // Post,
     Header,
+    Text,
 } from './styles.js'
 
 const GET_TWEETS = gql`
@@ -30,11 +32,14 @@ export default () => {
     <WrapperPosts>
       <Posts>
         {data.Tweets.map((tweet, index) => (
-          <Post key={index}>
-            <Header>
+          <Post key={index} tweet={tweet}>
+            {/* <Header>
               <strong>{tweet.User?.name}</strong>
-              <span>{tweet.content}</span>
             </Header>
+            <Text>
+              {tweet.content}
+            </Text> */}
+
           </Post>
         ))}
       </Posts>

@@ -37,13 +37,9 @@ export const Header = styled.div`
         margin-right: 5px;
     }
 
-    > span, time {
-        color: var(--gray);
-    }
+`;
 
-    > strong, span {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+export const Text = styled.p`
+    font-size: 14px;
+    margin-top: 4px;
 `;
