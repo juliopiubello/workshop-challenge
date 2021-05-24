@@ -5,9 +5,6 @@ import Post from '../Post';
 import {
     WrapperPosts,
     Posts,
-    // Post,
-    Header,
-    Text,
 } from './styles.js'
 
 const GET_TWEETS = gql`
@@ -21,6 +18,7 @@ const GET_TWEETS = gql`
   }
 `;
 
+/** Tweets in the feed */
 export default () => {
   const { data, loading, error } = useQuery(GET_TWEETS);
 
@@ -32,15 +30,7 @@ export default () => {
     <WrapperPosts>
       <Posts>
         {data.Tweets.map((tweet, index) => (
-          <Post key={index} tweet={tweet}>
-            {/* <Header>
-              <strong>{tweet.User?.name}</strong>
-            </Header>
-            <Text>
-              {tweet.content}
-            </Text> */}
-
-          </Post>
+          <Post key={index} tweet={tweet} />
         ))}
       </Posts>
     </WrapperPosts>

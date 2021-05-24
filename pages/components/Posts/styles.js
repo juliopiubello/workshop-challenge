@@ -38,8 +38,3 @@ export const Header = styled.div`
     }
 
 `;
-
-export const Text = styled.p`
-    font-size: 14px;
-    margin-top: 4px;
-`;
