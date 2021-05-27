@@ -13,9 +13,6 @@ const FollowList = ({ elements }) => {
       {elements.map((element, index) => (
         <Item key={index}>{element}</Item>
       ))}
-
-      {/* Actually, displays any content */}
-      <Item>Testing...</Item>
     </Container>
   );
 };
