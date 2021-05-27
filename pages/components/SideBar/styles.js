@@ -63,3 +63,19 @@ export const SearchIcon = styled(Search)`
 
   fill: var(--gray);
 `;
+
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 57px 24px 200px;
+  margin-top: 3px;
+
+  /*  */
+  position: sticky;
+  top: 0;
+
+  > div + div {
+    // after first div (starts from second)
+    margin-top: 15px;
+  }
+`;
