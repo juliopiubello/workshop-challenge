@@ -2,12 +2,13 @@ import React from "react";
 import styled from 'styled-components';
 
 import Feed from "../Feed";
+import MenuBar from "../MenuBar";
 
 const Layout = () => {
   return (
     <Container>
       <Wrapper>
-        {/* <MenuBar /> */}
+        <MenuBar />
         <Feed />
         {/* <SideBar /> */}
       </Wrapper>
