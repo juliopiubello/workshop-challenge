@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Feed from "../Feed";
 import MenuBar from "../MenuBar";
+import SideBar from "../SideBar";
 
 const Layout = () => {
   return (
@@ -10,7 +11,7 @@ const Layout = () => {
       <Wrapper>
         <MenuBar />
         <Feed />
-        {/* <SideBar /> */}
+        <SideBar />
       </Wrapper>
     </Container>
   );
